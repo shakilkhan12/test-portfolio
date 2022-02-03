@@ -1,0 +1,142 @@
+@use "../abstracts" as *;
+.footer {
+  padding: 8rem 0;
+  // background: $green-50;
+  // border-top: 0.1rem solid $gray-200;
+  background: linear-gradient(to top, $white 50%, $gray-50 50%);
+  &__userheading {
+    // text-align: center;
+    margin-top: 1rem;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  &__usercountry {
+    // text-align: center;
+    font-size: 1.3rem;
+    // margin-top: 0.2rem;
+    color: $gray-500;
+    font-weight: 400;
+    text-transform: capitalize;
+  }
+  &__image {
+    width: 18rem;
+    height: 18rem;
+    // margin: 0 auto;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border-left: 0.6rem dotted $green-500;
+    position: relative;
+    &__label {
+      @include position(absolute, 0, -9rem, null, null);
+      background: $green-500;
+      color: $white;
+      padding: 0.8rem 1.3rem;
+      text-transform: capitalize;
+      font-size: 1.2rem;
+      font-weight: 500;
+      border-top-left-radius: 50%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  &__socials {
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: center;
+    &__circle {
+      width: 3rem;
+      height: 3rem;
+      background: $green-500;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 0.5rem;
+      a {
+        i {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  &__heading {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: $gray-900;
+    @include responsive(xsm) {
+      font-size: 1.3rem;
+    }
+  }
+  &__card {
+    // background: $green-400;
+    // padding: 2rem;
+    &__header {
+      margin-bottom: 1.5rem;
+      h3 {
+        font-size: 1.8rem;
+        color: red;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+  }
+  &__ul {
+    list-style: none;
+    &__li {
+      margin-bottom: 1.5rem;
+      a {
+        text-decoration: none;
+        color: $black;
+        text-transform: capitalize;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $gray-500;
+        @include responsive(xsm) {
+          font-size: 1.3rem;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &__bottom {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    p {
+      color: $gray-600;
+      font-size: 1.4rem;
+      span {
+        text-transform: capitalize;
+        font-weight: 500;
+        color: $gray-700;
+      }
+    }
+  }
+  &__mainheading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $gray-700;
+  }
+  &__p {
+    // text-align: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-top: 1.5rem;
+    width: 70%;
+    span {
+      color: $green-600;
+      text-transform: capitalize;
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+}

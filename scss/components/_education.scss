@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+.education {
+  padding: 8rem 0;
+  &__card {
+    width: 100%;
+    background: $gray-50;
+    padding: 1.5rem;
+    &__icon {
+      width: 5rem;
+      height: 5rem;
+      @include flexBox(center, center);
+      background: $green-200;
+      border-radius: 50%;
+      i {
+        font-size: 1.8rem;
+        color: $green-500;
+      }
+    }
+    &__title {
+      margin-top: 1.5rem;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+    }
+  }
+}

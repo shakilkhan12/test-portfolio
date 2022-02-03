@@ -1,0 +1,36 @@
+@use "colors" as *;
+@use "mixins" as *;
+.btn {
+    text-decoration: none;
+    text-transform: capitalize;
+    height: 4.3rem;
+    line-height: 4.3rem;
+    padding: 0 1.5rem;
+    display: inline-block;
+    border-radius: .2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    border:none;
+    transition: all .3s ease-in-out;
+    @include responsive(sm) {
+        height: 3.5rem;
+        line-height: 3.5rem;
+        padding: 0 1.3rem;
+        font-size: 1.3rem;
+    }
+    &-default {
+        background: $green-500;
+        color: $white;
+        &:focus {
+            outline: 4px solid $green-50;
+        }
+    }
+    &-dark {
+        background: $black;
+        color: $white;
+        &:focus {
+            outline: 3px solid rgba(0,0,0,.2);
+        }
+    }
+}

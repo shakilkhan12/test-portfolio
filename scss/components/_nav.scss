@@ -1,0 +1,135 @@
+@use "../abstracts" as *;
+.nav {
+  width: 100%;
+  height: 7rem;
+  background: $white;
+  @include position(fixed, 0, null, null, 0);
+  border-bottom: 0.1rem solid $gray-100;
+  @include flexBox(center, center);
+  z-index: 1;
+  &__wrapper {
+    width: 100%;
+    max-width: $maxWidth;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    @include responsive(lg) {
+      //    background: red;
+    }
+    @include responsive(md) {
+      //    background: orange;
+    }
+    @include responsive(lg) {
+      padding-left: $gutter + 2rem;
+      padding-right: $gutter + 2rem;
+    }
+    @include responsive(xsm) {
+      //    background: yellow;
+    }
+    @include flexBox(space-between, center);
+    &__logo {
+      &__brand {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: $black;
+        font-size: 2.5rem;
+        font-weight: 600;
+        position: relative;
+        &::after {
+          @include position(absolute, null, -1rem, 0.6rem, null);
+          content: "";
+          width: 0.8rem;
+          height: 0.8rem;
+          background: $green-500;
+          border-radius: 50%;
+          box-shadow: 0.2rem 0.2rem $green-200;
+        }
+      }
+    }
+    &__ul {
+      display: flex;
+      list-style: none;
+      @include responsive(sm) {
+        position: fixed;
+        top: 7rem;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $green-500;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5rem;
+        transform: scale(0);
+        transition: all 0.3s ease-in-out;
+        border-radius: 50%;
+        transform-origin: 100% 50%;
+      }
+      &__li {
+        width: 100%;
+        &__a {
+          text-decoration: none;
+          text-transform: capitalize;
+          color: $black;
+          font-size: 1.4rem;
+          font-weight: 500;
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+          &:hover,
+          &:focus {
+            color: $green-500;
+          }
+          @include responsive(sm) {
+            transition: all 0.3s linear;
+            display: block;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            color: $white;
+            padding-left: 1.5rem + 1rem;
+            padding-right: 1.5rem + 1rem;
+            &:hover {
+              background: $white;
+              color: $green-500;
+              padding-left: 3.5rem;
+            }
+            &:focus {
+              color: $green-900;
+            }
+          }
+        }
+        &:first-child &__a {
+          color: $green-500;
+          @include responsive(sm) {
+            color: $black;
+          }
+        }
+        &:last-child &__a {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+  &__toggle {
+    display: none;
+    width: 3rem;
+    height: 3rem;
+    outline: 3px solid $green-200;
+    @include responsive(sm) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $green-500;
+      border-radius: 0.4rem;
+      i {
+        font-size: 2.1rem;
+        cursor: pointer;
+        color: $white;
+      }
+    }
+  }
+  @include responsive(sm) {
+    &__active {
+      transform: scale(1);
+      visibility: visible;
+      border-radius: 0;
+    }
+  }
+}

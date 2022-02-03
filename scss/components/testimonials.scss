@@ -1,0 +1,183 @@
+@use "../abstracts" as *;
+.testimonials {
+  background: $green-50;
+  padding: 8rem 0;
+  .aa [class^="col-"]:nth-child(1) {
+    transform: rotate(5deg);
+  }
+  .aa [class^="col-"]:nth-child(2) {
+    transform: rotate(-5deg);
+  }
+  .aa [class^="col-"]:nth-child(3) {
+    transform: rotate(-6deg);
+  }
+  .aa [class^="col-"]:nth-child(4) {
+    transform: rotate(8deg);
+  }
+  .aa [class^="col-"]:nth-child(5) {
+    transform: rotate(-15deg);
+  }
+  .aa [class^="col-"]:nth-child(6) {
+    transform: rotate(10deg);
+  }
+
+  &__card {
+    width: 100%;
+    background: $white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    position: relative;
+    box-shadow: -3rem 3rem 3rem -3rem rgba(0, 0, 0, 0.1);
+    &__icon {
+      position: absolute;
+      top: 0rem;
+      right: 1rem;
+      i {
+        font-size: 5rem;
+        color: $gray-50;
+      }
+    }
+    &__user {
+      display: flex;
+      align-items: center;
+      &__image {
+        width: 5.5rem;
+        height: 5.5rem;
+        img {
+          @extend %image-cover;
+          border-radius: 50%;
+        }
+      }
+      &__details {
+        margin-left: 1rem;
+        &__name {
+          display: block;
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: $black;
+          text-transform: capitalize;
+        }
+        &__country {
+          display: block;
+          font-size: 1.2rem;
+          font-weight: 500;
+          color: $green-500;
+          text-transform: capitalize;
+        }
+        &__rating {
+          display: block;
+          // margin-top: 1rem;
+          i {
+            margin-left: 0.5rem;
+            font-size: 1.3rem;
+            color: orange;
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+    &__comment {
+      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      line-height: 2.3rem;
+      color: $gray-600;
+    }
+  }
+  &__right {
+    background: $green-400;
+    width: 100%;
+    min-height: 100%;
+    padding: 3rem;
+    // box-shadow: 0 3rem 2rem -2rem rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include responsive(md) {
+      min-height: auto;
+    }
+    &__heading {
+      font-size: 2.8rem;
+      text-transform: capitalize;
+      font-weight: 700;
+      line-height: 3.2rem;
+      background: linear-gradient(45deg, $green-900 20%, $white 20%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    &__message {
+      margin-top: 1.5rem;
+      font-size: 1.5rem;
+      color: $white;
+      font-weight: 500;
+    }
+    &__images {
+      width: 100%;
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      &__clients {
+        margin-left: 0.5rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $green-900;
+      }
+      &__block {
+        width: 4rem;
+        height: 4rem;
+        margin-left: -1.5rem;
+        &:first-child {
+          margin-left: 0;
+        }
+        img {
+          @extend %image-cover;
+          border-radius: 50%;
+          border: 0.3rem solid $green-400;
+          background: $green-400;
+        }
+      }
+    }
+    &__clients {
+      margin-top: 1.5rem;
+      &__number {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: $white;
+        display: block;
+      }
+      &__text {
+        display: block;
+        margin-left: 0.5rem;
+        font-weight: 400;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+      }
+    }
+    &__av {
+      margin-top: 1.5rem;
+      padding: 1rem 1rem;
+      display: flex;
+      align-items: center;
+      background: $green-900;
+      &__number {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: orange;
+      }
+      &__stars {
+        margin-left: 0.5rem;
+        i {
+          font-size: 1.4rem;
+          color: orange;
+        }
+      }
+      &__all {
+        margin-left: 0.5rem;
+        color: $gray-300;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}

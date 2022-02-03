@@ -1,0 +1,104 @@
+@use "../abstracts/" as *;
+.header {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    @include position(absolute, 7rem, 0, null, null);
+    content: "";
+    width: 50%;
+    height: calc(100vh - 7rem);
+    background: url("assets/4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-position: 0 10%;
+    background-position: 0 15%;
+    clip-path: polygon(32% 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+    z-index: -1;
+    @include responsive(md) {
+      clip-path: none;
+    }
+    @include responsive(sm) {
+      width: 100%;
+      height: calc(50vh - 7rem);
+
+      clip-path: none;
+    }
+  }
+  &::before {
+    @include position(absolute, null, null, 2rem, -10rem);
+    content: "";
+    width: 35rem;
+    height: 35rem;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.6;
+    border-radius: 50%;
+    border: 8rem solid $green-50;
+  }
+  &__data {
+    margin-top: 7rem;
+    width: 100%;
+    height: calc(100vh - 10rem);
+    // @media (min-height: 700px) {
+    //   height: calc(70vh - 10rem);
+    // }
+    @include flexBox(null, center);
+    @include responsive(sm) {
+      height: calc(50vh - 3rem);
+      margin-top: 0;
+      margin-top: 50vh;
+      // background: red;
+    }
+  }
+  &__data__heading-top {
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    @include responsive(xsm) {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+  &__data__heading {
+    margin-top: 1.5rem;
+    font-size: 4.5rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    background: linear-gradient(45deg, $black 50%, $green-500 50%);
+    line-height: 4.5rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    @include responsive(md) {
+      font-size: 4rem;
+    }
+    @include responsive(sm) {
+      font-size: 3.3rem;
+      margin-top: 1rem;
+      line-height: 3.3rem;
+      font-weight: 800;
+    }
+    @include responsive(xsm) {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 3rem;
+    }
+  }
+  &__data__heading-bottom {
+    margin-top: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: $black;
+    @include responsive(sm) {
+      margin-top: 1rem;
+    }
+    @include responsive(xsm) {
+      font-size: 1.7rem;
+    }
+  }
+  &__data__links {
+    margin-top: 1.5rem;
+    line-height: 2.7rem;
+  }
+}

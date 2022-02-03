@@ -1,0 +1,129 @@
+@use "../abstracts/" as *;
+.heading {
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 20px;
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 5px;
+    background: #10b981;
+    left: 0;
+    top: 50%;
+    opacity: 0.3;
+    border-radius: 10px;
+  }
+}
+.align-center {
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: $white;
+}
+.link {
+  color: $black;
+  font-size: 1.4rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+.blod-600 {
+  font-weight: 600;
+}
+.group {
+  margin-bottom: 1.5rem;
+}
+.control {
+  width: 100%;
+  border: none;
+  background: $green-400;
+  height: 4.5rem;
+  padding: 0 1.5rem;
+  // border-radius: 0.3rem;
+  font-size: 1.4rem;
+  outline: none;
+  color: white;
+}
+// ::placeholder {
+//   color: $white;
+//   text-transform: capitalize;
+// }
+.textarea-control::placeholder {
+  color: $white;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+.textarea-control {
+  width: 100%;
+  border: none;
+  background: $green-400;
+  height: auto;
+  padding: 1.5rem;
+  // border-radius: 0.7rem;
+  font-size: 1.4rem;
+  outline: none;
+}
+.skew {
+  transform: skewY(-3deg);
+  & > * {
+    transform: skewY(3deg);
+  }
+}
+
+@include responsive(sm) {
+  .sm-order-1 {
+    order: 1;
+  }
+  .sm-order-2 {
+    order: 2;
+  }
+}
+@include responsive(md) {
+  .md\:items-center {
+    align-items: center;
+  }
+}
+.form {
+  width: 100%;
+  padding: 2rem;
+  background: $white;
+  &-group {
+    // margin-bottom: 1.2rem;
+    label {
+      display: none;
+      text-transform: capitalize;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: $gray-800;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &-control {
+    width: 100%;
+    border: none;
+    // background: $gray-100;
+    border-bottom: 1px solid $gray-200;
+    padding: 1.5rem 0rem;
+    outline: none;
+    color: $gray-800;
+    font-size: 1.3rem;
+    font-weight: 500;
+  }
+  // ::placeholder {
+  //   color: $gray-400 !important;
+  //   font-weight: 600 !important;
+  //   font-size: 1.2rem;
+  // }
+}
+
+.form-control::placeholder {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: $gray-500;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.1rem;
+}
